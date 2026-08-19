@@ -3,7 +3,8 @@ layout: about
 title: about
 permalink: /
 # subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.
-subtitle: <a href='https://www.engr.ucr.edu/'>University of California, Riverside</a>
+# subtitle: <a href='https://www.engr.ucr.edu/'>University of California, Riverside</a>
+subtitle: <a href='https://www.gatech.edu/'>Georgia Institute of Technology</a>
 
 profile:
   align: right
