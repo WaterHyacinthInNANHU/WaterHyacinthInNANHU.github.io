@@ -730,6 +730,12 @@ footer.sticky-bottom {
       margin-bottom: 1rem;
 
       .preview {
+        display: block;
+        width: 100%;
+        max-width: 240px;
+        max-height: 180px;
+        object-fit: contain;
+        background-color: white;
       }
 
       .abbr {
