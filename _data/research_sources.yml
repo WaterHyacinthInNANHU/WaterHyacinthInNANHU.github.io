@@ -42,7 +42,7 @@ stac:
 media_note: Images remain the work of their respective authors. Existing and author-supplied figures are used to illustrate the author's own publications, with source links; no blanket relicensing is asserted.
 
 preview_revision:
-  axis_pairs: Six individual GIF pairs cropped from the supplied AXIS montage, stacked vertically with a downward comparison arrow; 15 fps, 18 seconds per pair.
+  axis_pairs: Six individual GIF pairs cropped from the supplied AXIS montage, stacked vertically with a downward comparison arrow; 15 fps; static tails trimmed per pair to 11.4, 12.8, 13.2, 15.2, 13.2, and 18 seconds, preserving full motion.
   detvpcc_crop: Top detection-comparison panel only; rate-accuracy plots omitted at the author's request.
   stac_preview: User-uploaded results image only; system overview omitted at the author's request.
   gif_previews: Existing repository rdd.gif and axis-bench.gif reused.
