@@ -113,17 +113,15 @@
 .work-note {
   margin: -0.25rem 0 0.6rem;
 }
+.work-highlight {
+  font-size: 0.94rem;
+  line-height: 1.5;
+  margin: 0.65rem 0 0.35rem;
+}
 .work-tldr {
   font-size: 0.94rem;
   line-height: 1.6;
-  margin: 0.55rem 0 0.85rem;
-}
-.tldr-label {
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.025em;
-  margin-right: 0.3rem;
-  color: var(--global-theme-color);
+  margin: 0 0 0.85rem;
 }
 .work-links {
   display: flex;
@@ -224,4 +222,20 @@
   min-width: 32px;
   min-height: 32px;
   cursor: pointer;
+}
+
+.work-media .axis-pair-image {
+  max-height: none;
+}
+
+.company-link {
+  white-space: nowrap;
+}
+.company-icon {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  vertical-align: -3px;
+  margin-right: 4px;
+  border-radius: 3px;
 }

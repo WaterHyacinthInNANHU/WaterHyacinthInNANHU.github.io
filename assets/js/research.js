@@ -33,18 +33,19 @@
 
 (() => {
   const tasks = [
-    "Press blue button",
     "Place blue cup in red cup",
+    "Press blue button",
     "Align three blocks",
     "Insert book in stand",
     "Rotate red block",
     "Stack red block on blue",
   ];
+  const order = [2, 1, 3, 4, 5, 6];
   document.querySelectorAll(".axis-pairs").forEach((el) => {
     let i = 0;
     const show = (step) => {
       i = (i + step + 6) % 6;
-      const src = "/assets/img/publication_preview/axis-pair-" + (i + 1) + ".gif";
+      const src = "/assets/img/publication_preview/axis-pair-" + order[i] + ".gif";
       el.querySelector("img").src = src;
       el.querySelector("img").alt = tasks[i] + ": no AXIS pretraining to AXIS pretraining";
       el.querySelector("a").href = src;

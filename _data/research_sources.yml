@@ -42,7 +42,9 @@ stac:
 media_note: Images remain the work of their respective authors. Existing and author-supplied figures are used to illustrate the author's own publications, with source links; no blanket relicensing is asserted.
 
 preview_revision:
-  axis_pairs: Six individual GIF pairs cropped from the supplied AXIS montage, with a left-to-right comparison arrow; 5 fps, 18 seconds per pair.
+  axis_pairs: Six individual GIF pairs cropped from the supplied AXIS montage, stacked vertically with a downward comparison arrow; 15 fps, 18 seconds per pair.
   detvpcc_crop: Top detection-comparison panel only; rate-accuracy plots omitted at the author's request.
   stac_preview: User-uploaded results image only; system overview omitted at the author's request.
   gif_previews: Existing repository rdd.gif and axis-bench.gif reused.
+
+axis_robotics_icon: https://axisrobotics.ai/assets/favicon.png

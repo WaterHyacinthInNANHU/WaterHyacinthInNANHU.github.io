@@ -12,15 +12,15 @@
   html={https://axis-bench.github.io/},
   paper={https://arxiv.org/abs/2610.18869},
   short_name={AXIS-Bench},
-  display_title={Axis-Bench: What Matters in Quality-Aware VLA Pretraining: A Benchmark and Empirical Study},
+  display_title={Axis-Bench: What Matters in Quality-Aware VLA Pretraining},
   display_venue={Under review, 2026},
   project={https://axis-bench.github.io/},
   video={https://axis-bench.github.io/assets/video/finding-grid-5.mp4},
   demo_preview={https://axis-bench.github.io/assets/video/finding-grid-5.mp4},
   media_alt={AXIS-Bench comparison of plain behavior cloning and episode-level conditioning across three VLA models},
   media_caption={Quality-aware pretraining across three VLA models.},
-  tldr={A benchmark with replayable robot demonstrations and state-based quality labels enables controlled studies of VLA pretraining.},
-  highlight={Episode-level conditioning improves mean success across all three tested VLAs.},
+  tldr={We compare weighting, filtering, and conditioning on shared demonstrations with matched training budgets. Across three VLAs, episode-level conditioning improves mean task success, while the best label granularity depends on the method and model. Replayable demonstrations also support real-world validation.},
+  highlight={A controlled benchmark reveals how demonstration quality shapes VLA pretraining.},
   demo_note={The original project video compares plain behavior cloning with episode-level conditioning. Footage is shown at 3x speed.},
 }
 
@@ -40,14 +40,15 @@
   pdf={https://arxiv.org/pdf/2607.21588},
   html={https://axisaiorg.github.io/AXIS-V1/},
   project={https://axisaiorg.github.io/AXIS-V1/},
+  dataset={https://huggingface.co/datasets/axisrobotics/Franka-Dataset},
   preview={axis-poster.webp},
   video={/assets/video/axis-pretraining-comparison.mp4},
   demo_preview={/assets/video/axis-pretraining-comparison.mp4},
   system_figure={axis-system.webp},
   media_alt={Six paired real-world robot tasks comparing no AXIS pretraining on the left with AXIS behavior-cloning pretraining on the right},
   media_caption={Left: no AXIS pretraining. Right: AXIS BC pretraining.},
-  tldr={Enables community robot-data collection in the browser, with automated validation, trajectory refinement, and augmentation.},
-  highlight={Scalable data collection supports more robust VLA policies.},
+  tldr={Contributors collect simulated robot demonstrations directly in a web browser. AXIS generates and validates tasks, refines trajectories, and augments scenes to grow the dataset over time. Pretraining on AXIS improves policy robustness on LIBERO-Plus.},
+  highlight={A browser-based data engine turns community demonstrations into scalable robot training data.},
   demo_note={This 18-second montage comes from the supplied research slides and uses AXIS-Bench real-world trials. Within each pair, left is no AXIS pretraining and right is AXIS plain behavior-cloning pretraining; both receive target-task fine-tuning. Footage is shown at 2x speed. These selected illustrative trials are separate from the AXIS paper's LIBERO-Plus evaluation.},
 }
 
@@ -66,12 +67,13 @@
   display_venue={NeurIPS 2025},
   paper={https://arxiv.org/abs/2510.14968},
   project={https://rdd-neurips.github.io/},
+  code={https://github.com/tasl-lab/RDD},
   video={https://rdd-neurips.github.io/static/videos/demo.mp4},
   demo_preview={https://rdd-neurips.github.io/static/videos/demo.mp4},
   media_alt={RDD decomposes long robot demonstrations into sub-tasks aligned with learned robot skills},
   media_caption={Retrieval-guided demonstration decomposition.},
-  tldr={Automatically decomposes long demonstrations into sub-tasks that match the skills learned by the low-level robot policy.},
-  highlight={Retrieval-based planner alignment achieves near-oracle downstream success with no manual segmentation.},
+  tldr={RDD decomposes long demonstrations by retrieving visually similar sub-tasks from the low-level policy's training data. These segments provide aligned supervision for the high-level planner, bringing downstream task success close to that obtained with expert segmentation.},
+  highlight={Aligning planner supervision with robot skills improves long-horizon manipulation.},
 }
 
 
@@ -95,8 +97,8 @@
   video={https://uniocc.github.io/video/TrackingDemo.mp4},
   media_alt={UniOcc unifies nuScenes, CARLA, Waymo, and OpenCOOD with occupancy labels, flow, and a common evaluation pipeline},
   media_caption={Unified occupancy data and evaluation pipeline.},
-  tldr={Unifies occupancy labels, voxel-level flow, and evaluation across real-world and synthetic driving datasets.},
-  highlight={One framework supports occupancy prediction, forecasting, and cooperative perception.},
+  tldr={UniOcc brings real and simulated driving datasets into a common format with occupancy and voxel-level motion labels. Shared evaluation covers current and future occupancy, including shape plausibility and temporal consistency without requiring ground-truth occupancy.},
+  highlight={Unified occupancy data connects perception, forecasting, and cooperative driving.},
 }
 
 
@@ -117,8 +119,8 @@
   paper={https://arxiv.org/abs/2502.04804},
   media_alt={DetVPCC preserves object detection regions and improves detection accuracy at comparable point-cloud bitrates},
   media_caption={Detection results and rate-accuracy trade-offs.},
-  tldr={Compresses point-cloud sequences for 3D object detection by assigning more bits to regions likely to contain objects.},
-  highlight={A lightweight RoI detector preserves detection accuracy while reducing transmission cost.},
+  tldr={DetVPCC uses a lightweight detector to identify regions likely to contain objects, then assigns them higher coding quality within VPCC. This preserves detection-relevant geometry and improves the bitrate-accuracy trade-off on nuScenes.},
+  highlight={Prioritizing object regions improves point-cloud compression for 3D detection.},
 }
   
   @article{xiao2025pdstream,
@@ -152,8 +154,8 @@
   media_caption={STAC system overview. See the paper for details.},
   system_figure={stac-results.png},
   figure_label={Results},
-  tldr={Adapts video compression to semantic segmentation and changing network bandwidth for edge-assisted perception.},
-  highlight={Task-oriented compression balances segmentation accuracy and bitrate.},
+  tldr={STAC uses network gradients to identify regions where compression most affects segmentation accuracy. It combines spatial and temporal compression with a learned bandwidth-aware controller, reducing transmission cost while adapting to changing video content and network conditions.},
+  highlight={Model-guided video compression preserves the details needed for semantic segmentation.},
 }
 
 @article{penance,
@@ -189,8 +191,8 @@
   media_alt={Fiammetta pipeline with offline preprocessing, meta-training, and online meta-testing for video adaptation},
   media_caption={Fiammetta system overview.},
   author_note={* Equal contribution.},
-  tldr={Uses offline meta-training and a few online updates to adapt interactive video streaming to changing network conditions.},
-  highlight={Fast bitrate adaptation improves video quality without increasing stalling.},
+  tldr={Fiammetta learns an adaptable streaming policy offline and updates it online with a few gradient steps. Evaluated on real-world WeChat for Business network traces, it increases video bitrate without increasing the stalling rate.},
+  highlight={Meta-learning enables rapid bitrate adaptation as network conditions change.},
 }
 
 

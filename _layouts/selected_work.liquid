@@ -5,16 +5,17 @@
     {% assign preview_path = entry.preview | prepend: '/assets/img/publication_preview/' %}
     {% if entry.key == 'axis' %}
       <div class="axis-pairs" data-pair="0">
-        <a class="axis-pair-link" href="/assets/img/publication_preview/axis-pair-1.gif"
+        <a class="axis-pair-link" href="/assets/img/publication_preview/axis-pair-2.gif"
           ><img
             class="axis-pair-image"
-            src="/assets/img/publication_preview/axis-pair-1.gif"
-            alt="Press blue button: no AXIS pretraining to AXIS pretraining"
+            src="/assets/img/publication_preview/axis-pair-2.gif"
+            alt="Place blue cup in red cup: no AXIS pretraining to AXIS pretraining"
             loading="lazy"
         ></a>
         <div class="axis-pair-controls">
           <button type="button" class="axis-prev" aria-label="Previous comparison">&#8592;</button
-          ><span class="axis-task">Press blue button (1/6)</span><button type="button" class="axis-next" aria-label="Next comparison">&#8594;</button>
+          ><span class="axis-task">Place blue cup in red cup (1/6)</span
+          ><button type="button" class="axis-next" aria-label="Next comparison">&#8594;</button>
         </div>
       </div>
       <figcaption>Detailed results: <a href="https://axis-bench.github.io/">AXIS-Bench</a></figcaption>
@@ -32,7 +33,7 @@
       <p class="work-authors" id="authors-{{ entry.key }}">
         {%- for author in entry.author_array -%}
           {%- unless forloop.first -%}, {% endunless -%}
-          {%- assign last_name = author.last | regex_replace: '[*âˆ—â€ â€¡Â§Â¶â€–&^]', '' -%}
+          {%- assign last_name = author.last | regex_replace: '[*∗†‡§¶‖&^]', '' -%}
           {%- assign full_name = author.first | append: ' ' | append: last_name -%}
           {%- if full_name == 'Mingxuan Yan' -%}
             <strong>{{ full_name }}</strong>
@@ -65,14 +66,17 @@
     {% if entry.author_note %}
       <p class="work-note">{{ entry.author_note }}</p>
     {% endif %}
-    <p class="work-tldr">
-      <span class="tldr-label">TL;DR</span> {{ entry.tldr }}
+    <p class="work-highlight">
       <strong>{{ entry.highlight }}</strong>
     </p>
+    <p class="work-tldr">{{ entry.tldr }}</p>
     <div class="work-links" aria-label="{{ entry.short_name }} resources">
       <a href="{{ entry.paper | default: entry.pdf | default: entry.html }}">Paper</a>
       {% if entry.project -%}
         <a href="{{ entry.project }}">Project</a>
+      {%- endif %}
+      {% if entry.dataset -%}
+        <a href="{{ entry.dataset }}">Dataset</a>
       {%- endif %}
       {% if entry.code -%}
         <a href="{{ entry.code }}">Code</a>
