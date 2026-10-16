@@ -15,13 +15,6 @@
         <img src="{{ preview_path | relative_url }}" alt="{{ entry.media_alt | escape }}" loading="lazy" decoding="async">
       </a>
     {% endif %}
-    <figcaption>
-      {{ entry.media_caption -}}
-      {%- unless entry.demo_preview %}
-        <a href="{{ preview_path | relative_url }}">Full-size figure</a>
-      {%- endunless %}
-      <a href="{{ entry.project | default: entry.pdf | default: entry.paper }}">Source</a>
-    </figcaption>
     {% if entry.extra_preview %}
       {% assign extra_path = entry.extra_preview | prepend: '/assets/img/publication_preview/' %}
       <a class="work-extra-figure" href="{{ extra_path | relative_url }}" aria-label="View full-size STAC results">
@@ -32,8 +25,18 @@
           decoding="async"
         >
       </a>
-      <figcaption>Accuracy versus image size. <a href="{{ extra_path | relative_url }}">Full-size results</a></figcaption>
     {% endif %}
+    <figcaption>
+      {{ entry.media_caption -}}
+      {%- unless entry.demo_preview %}
+        <a href="{{ preview_path | relative_url }}">Full-size figure</a>
+      {%- endunless %}
+      <a href="{{ entry.project | default: entry.pdf | default: entry.paper }}">Source</a>
+      {% if entry.extra_preview %}
+        <br>
+        Below: accuracy versus image size. <a href="{{ extra_path | relative_url }}">Full-size results</a>
+      {% endif %}
+    </figcaption>
   </figure>
   <div class="work-body">
     <h3 id="title-{{ entry.key }}">
