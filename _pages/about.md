@@ -10,7 +10,7 @@ profile:
   align: right
   image_cicular: false # crops the image to make it circular
   image: profile.jpg
-  address: >
+  address: > 
     <p style="font-size:10px;" align="center">
       Me at La Jolla, San Diego, CA
     </p>
@@ -29,9 +29,9 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-Hi there! I am Mingxuan Yan (pron: Ming-shwen Yen), a PhD student at [Georgia Institute of Technology](https://www.gatech.edu/).
+Hi there! I am Mingxuan Yan (pron: Ming-shwen Yen), 
+<!-- a second PhD student at **[University of California - Riverside](https://www.ucr.edu/)**.  -->
+a PhD student at [Georgia Institute of Technology](https://www.gatech.edu/)
 I am currently a member of **[TASL](https://tasl.ucr.edu/)** under the supervision of **[Prof. Jiachen Li](https://jiachenli94.github.io/)**. Before that, I obtained my bachelor's degree at [Wuhan University of Technology](http://english.whut.edu.cn/), following a master's degree at [Huazhong University of Science and Technology](http://english.hust.edu.cn/).
 
 My research interests lie in efficient and scalable robot learning and policy deployment.
-
-Email: [myan81@gatech.edu](mailto:myan81@gatech.edu)
