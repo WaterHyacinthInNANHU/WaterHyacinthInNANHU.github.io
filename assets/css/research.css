@@ -17,6 +17,8 @@
   position: absolute;
   inset: 0;
   margin: 0;
+  overflow: hidden;
+  border-radius: 4px;
 }
 .about-intro .profile picture {
   height: 100%;
@@ -26,9 +28,12 @@
 }
 .about-intro .profile img {
   height: 100%;
-  width: auto;
+  width: 100%;
   max-width: 100%;
-  object-fit: contain;
+  object-fit: cover;
+  object-position: 50% 44%;
+  transform: scale(1.2);
+  transform-origin: 50% 44%;
 }
 .about-bio {
   grid-column: 1;
@@ -46,8 +51,8 @@
   .about-intro .profile {
     grid-column: 1;
     grid-row: 1;
-    width: 160px;
-    height: 240px;
+    width: 200px;
+    height: 200px;
     justify-self: center;
   }
   .about-bio {
