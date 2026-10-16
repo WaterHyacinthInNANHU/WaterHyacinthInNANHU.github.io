@@ -30,3 +30,27 @@
   });
   if (document.fonts) document.fonts.ready.then(() => blocks.forEach(update));
 })();
+
+(() => {
+  const tasks = [
+    "Press blue button",
+    "Place blue cup in red cup",
+    "Align three blocks",
+    "Insert book in stand",
+    "Rotate red block",
+    "Stack red block on blue",
+  ];
+  document.querySelectorAll(".axis-pairs").forEach((el) => {
+    let i = 0;
+    const show = (step) => {
+      i = (i + step + 6) % 6;
+      const src = "/assets/img/publication_preview/axis-pair-" + (i + 1) + ".gif";
+      el.querySelector("img").src = src;
+      el.querySelector("img").alt = tasks[i] + ": no AXIS pretraining to AXIS pretraining";
+      el.querySelector("a").href = src;
+      el.querySelector(".axis-task").textContent = tasks[i] + " (" + (i + 1) + "/6)";
+    };
+    el.querySelector(".axis-prev").onclick = () => show(-1);
+    el.querySelector(".axis-next").onclick = () => show(1);
+  });
+})();

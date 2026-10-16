@@ -42,13 +42,6 @@ layout: default
 
     <div class="clearfix">{{ content }}</div>
 
-    <nav class="research-nav" aria-label="Homepage sections">
-      <a href="#news">News</a>
-      <a href="#selected-papers">Selected Papers</a>
-      <a href="#other-research">Other Research</a>
-      <a href="{{ '/publications/' | relative_url }}">All Publications</a>
-    </nav>
-
     <!-- News -->
     {% if page.announcements and page.announcements.enabled %}
       <section id="news" class="research-section" aria-labelledby="news-heading">
@@ -70,18 +63,11 @@ layout: default
     <!-- Selected papers -->
     {% if page.selected_papers %}
       <section id="selected-papers" class="research-section" aria-labelledby="selected-heading">
-        <h2 id="selected-heading">Selected Papers</h2>
-        <p class="research-intro">Robot learning, scalable data collection, and efficient 3D perception.</p>
+        <h2 id="selected-heading">Selected Research</h2>
         {% include selected_papers.liquid %}
-      </section>
-
-      <section id="other-research" class="research-section" aria-labelledby="other-heading">
-        <h2 id="other-heading">Other Research</h2>
-        <p class="research-intro">Adaptive video streaming and task-oriented visual computing.</p>
         <div class="research-list">
           {% bibliography --group_by none --template selected_work --query @*[featured_other=true]* %}
         </div>
-        <p class="research-footer"><a href="{{ '/publications/' | relative_url }}">View all publications &rarr;</a></p>
       </section>
     {% endif %}
 

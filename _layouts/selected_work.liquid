@@ -3,50 +3,36 @@
 <article class="research-work" id="work-{{ entry.key }}" aria-labelledby="title-{{ entry.key }}">
   <figure class="work-media">
     {% assign preview_path = entry.preview | prepend: '/assets/img/publication_preview/' %}
-    {% if entry.demo_preview %}
-      {% assign demo_path = entry.demo_preview %}
-      {% unless demo_path contains '://' %}{% assign demo_path = demo_path | relative_url %}{% endunless %}
-      <video controls playsinline preload="none" poster="{{ preview_path | relative_url }}" aria-label="{{ entry.media_alt | escape }}">
-        <source src="{{ demo_path }}" type="video/mp4">
-        <a href="{{ demo_path }}">Watch the video demo</a>
-      </video>
-    {% else %}
-      <a href="{{ preview_path | relative_url }}" aria-label="View full-size figure for {{ entry.title | escape }}">
-        <img src="{{ preview_path | relative_url }}" alt="{{ entry.media_alt | escape }}" loading="lazy" decoding="async">
-      </a>
-    {% endif %}
-    {% if entry.extra_preview %}
-      {% assign extra_path = entry.extra_preview | prepend: '/assets/img/publication_preview/' %}
-      <a class="work-extra-figure" href="{{ extra_path | relative_url }}" aria-label="View full-size STAC results">
-        <img
-          src="{{ extra_path | relative_url }}"
-          alt="STAC comparison of segmentation accuracy and image size, with example compressed regions"
-          loading="lazy"
-          decoding="async"
-        >
-      </a>
-    {% endif %}
-    <figcaption>
-      {{ entry.media_caption -}}
-      {%- unless entry.demo_preview %}
-        <a href="{{ preview_path | relative_url }}">Full-size figure</a>
-      {%- endunless %}
-      <a href="{{ entry.project | default: entry.pdf | default: entry.paper }}">Source</a>
-      {% if entry.extra_preview %}
-        <br>
-        Below: accuracy versus image size. <a href="{{ extra_path | relative_url }}">Full-size results</a>
-      {% endif %}
-    </figcaption>
+    {% if entry.key == 'axis' %}
+      <div class="axis-pairs" data-pair="0">
+        <a class="axis-pair-link" href="/assets/img/publication_preview/axis-pair-1.gif"
+          ><img
+            class="axis-pair-image"
+            src="/assets/img/publication_preview/axis-pair-1.gif"
+            alt="Press blue button: no AXIS pretraining to AXIS pretraining"
+            loading="lazy"
+        ></a>
+        <div class="axis-pair-controls">
+          <button type="button" class="axis-prev" aria-label="Previous comparison">&#8592;</button
+          ><span class="axis-task">Press blue button (1/6)</span><button type="button" class="axis-next" aria-label="Next comparison">&#8594;</button>
+        </div>
+      </div>
+      <figcaption>Detailed results: <a href="https://axis-bench.github.io/">AXIS-Bench</a></figcaption>
+    {% else -%}
+      <a href="{{ preview_path | relative_url }}"
+        ><img src="{{ preview_path | relative_url }}" alt="{{ entry.media_alt | escape }}" loading="lazy" decoding="async"
+      ></a>
+    {%- endif %}
   </figure>
   <div class="work-body">
     <h3 id="title-{{ entry.key }}">
-      <a href="{{ entry.paper | default: entry.pdf | default: entry.html }}">{{ entry.title }}</a>
+      <a href="{{ entry.paper | default: entry.pdf | default: entry.html }}">{{ entry.display_title | default: entry.title }}</a>
     </h3>
     <div class="work-author-block">
       <p class="work-authors" id="authors-{{ entry.key }}">
         {%- for author in entry.author_array -%}
           {%- unless forloop.first -%}, {% endunless -%}
-          {%- assign last_name = author.last | regex_replace: '[*∗†‡§¶‖&^]', '' -%}
+          {%- assign last_name = author.last | regex_replace: '[*âˆ—â€ â€¡Â§Â¶â€–&^]', '' -%}
           {%- assign full_name = author.first | append: ' ' | append: last_name -%}
           {%- if full_name == 'Mingxuan Yan' -%}
             <strong>{{ full_name }}</strong>
@@ -91,22 +77,6 @@
       {% if entry.code -%}
         <a href="{{ entry.code }}">Code</a>
       {%- endif %}
-      {% if entry.video %}
-        {% assign video_path = entry.video %}
-        {% unless video_path contains '://' %}{% assign video_path = video_path | relative_url %}{% endunless %}
-        <a href="{{ video_path }}">Video</a>
-      {% endif %}
-      {% if entry.system_figure -%}
-        <a href="{{ entry.system_figure | prepend: '/assets/img/publication_preview/' | relative_url }}">
-          {{- entry.figure_label | default: 'System overview' -}}
-        </a>
-      {%- endif %}
     </div>
-    {% if entry.demo_note %}
-      <details class="work-demo-note">
-        <summary>About this demo</summary>
-        <p>{{ entry.demo_note }}</p>
-      </details>
-    {% endif %}
   </div>
 </article>

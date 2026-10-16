@@ -200,3 +200,28 @@
     break-inside: avoid;
   }
 }
+
+.contact-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  align-items: center;
+  margin: 1rem 0;
+}
+.axis-pair-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 8px;
+  font-size: 0.8rem;
+}
+.axis-pair-controls button {
+  border: 1px solid var(--global-divider-color);
+  background: transparent;
+  color: var(--global-theme-color);
+  border-radius: 4px;
+  min-width: 32px;
+  min-height: 32px;
+  cursor: pointer;
+}

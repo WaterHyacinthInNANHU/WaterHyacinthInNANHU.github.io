@@ -40,3 +40,9 @@ stac:
   overview: Figure 2, page 2 of the author manuscript, rendered at 300 dpi and cropped to the figure
   results: User-uploaded image(1).png, reproduced unchanged; matches Figure 1
 media_note: Images remain the work of their respective authors. Existing and author-supplied figures are used to illustrate the author's own publications, with source links; no blanket relicensing is asserted.
+
+preview_revision:
+  axis_pairs: Six individual GIF pairs cropped from the supplied AXIS montage, with a left-to-right comparison arrow; 5 fps, 18 seconds per pair.
+  detvpcc_crop: Top detection-comparison panel only; rate-accuracy plots omitted at the author's request.
+  stac_preview: User-uploaded results image only; system overview omitted at the author's request.
+  gif_previews: Existing repository rdd.gif and axis-bench.gif reused.
