@@ -1,0 +1,39 @@
+name: Build research preview (no deployment)
+
+on:
+  push:
+    branches: [update-research-homepage-20261016]
+
+permissions:
+  contents: read
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3.5"
+          bundler-cache: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: pip
+      - name: Build with the existing Jekyll configuration
+        run: |
+          sudo apt-get update && sudo apt-get install -y imagemagick
+          pip3 install --upgrade nbconvert
+          JEKYLL_ENV=production bundle exec jekyll build
+      - uses: actions/setup-node@v4
+      - name: Apply the production CSS cleanup
+        run: |
+          npm install -g purgecss
+          purgecss -c purgecss.config.js
+      - name: Save preview files only
+        uses: actions/upload-artifact@v4
+        with:
+          name: research-homepage-preview
+          path: _site/
+          retention-days: 7
