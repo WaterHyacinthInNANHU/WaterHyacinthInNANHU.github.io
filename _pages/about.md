@@ -30,7 +30,7 @@ latest_posts:
 ---
 
 Hi there! I am Mingxuan Yan (pron: Ming-shwen Yen), a PhD student at [Georgia Institute of Technology](https://www.gatech.edu/).
-I am currently a member of **[TASL](https://tasl.ucr.edu/)** advised by **[Prof. Jiachen Li](https://jiachenli94.github.io/)**. Before that, I obtained my bachelor's degree at [Wuhan University of Technology](http://english.whut.edu.cn/), following a master's degree at [Huazhong University of Science and Technology](http://english.hust.edu.cn/).
+I am currently a member of **[TASL](https://tasl-lab.github.io/)** advised by **[Prof. Jiachen Li](https://jiachenli94.github.io/)**. Before that, I obtained my bachelor's degree at [Wuhan University of Technology](http://english.whut.edu.cn/), following a master's degree at [Huazhong University of Science and Technology](http://english.hust.edu.cn/).
 
 My research interests lie in efficient and scalable robot learning and policy deployment.
 

@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Joined **[TASL](https://tasl.ucr.edu/)** as a PhD student! 🤗🔬
+Joined **[TASL](https://tasl-lab.github.io/)** as a PhD student! 🤗🔬
