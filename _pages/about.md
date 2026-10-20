@@ -34,4 +34,4 @@ I am currently a member of **[TASL](https://tasl-lab.github.io/)** advised by **
 
 My research interests lie in efficient and scalable robot learning and policy deployment.
 
-<div class="contact-row"><a href="mailto:myan81@gatech.edu">Email</a><span>/</span><a href="https://www.linkedin.com/in/mingxuan-yan-b255931bb/">LinkedIn</a><span>/</span><a href="https://github.com/WaterHyacinthInNANHU">GitHub</a><span>/</span><a href="https://scholar.google.com/citations?user=8MvOAAQAAAAJ">Google Scholar</a></div>
+<div class="contact-row"><a href="mailto:myan81@gatech.edu">Email</a><span>/</span><a href="https://www.linkedin.com/in/mingxuan-yan-b255931bb/">LinkedIn</a><span>/</span><a href="https://github.com/WaterHyacinthInNANHU">GitHub</a><span>/</span><a href="https://scholar.google.com/citations?user=iGkoOTIAAAAJ">Google Scholar</a></div>
