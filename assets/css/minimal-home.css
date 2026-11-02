@@ -335,7 +335,6 @@
 .minimal-home .bench-controls button { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border: 0; padding: 0; color: #365d77; background: transparent; border-radius: 4px; cursor: pointer; font: 18px/1 Arial,sans-serif; }
 .minimal-home .bench-controls button:hover { background: #edf3f7; }
 .minimal-home .bench-controls button:focus-visible { outline: 2px solid #527f9b; outline-offset: 1px; }
-.minimal-home .bench-controls .bench-pause { font-size: 13px; }
 .minimal-home .bench-dots { display: flex; }
 .minimal-home .bench-dots button { width: 23px; }
 .minimal-home .bench-dots span { width: 6px; height: 6px; background: #bccbd4; border-radius: 50%; transition: width .2s, background .2s; }

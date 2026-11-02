@@ -5,22 +5,17 @@ document.querySelectorAll('.bench-carousel').forEach((carousel) => {
   const slides = [...carousel.querySelectorAll('.bench-slide')];
   const videos = slides.map(slide => slide.querySelector('video'));
   const dots = [...carousel.querySelectorAll('[data-bench-index]')];
-  const pause = carousel.querySelector('.bench-pause');
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
   let active = 0;
   let running = !reducedMotion.matches;
   let visible = false;
-  const updateButton = () => {
-    pause.textContent = running ? 'Ⅱ' : '▶';
-    pause.setAttribute('aria-label', running ? 'Pause slideshow' : 'Play slideshow');
-  };
   const syncPlayback = () => {
     videos.forEach((video, i) => {
       if (i === active && running && visible && !document.hidden) {
         video.play().catch(() => {
           if (i === active && visible && !document.hidden && video.paused) {
             running = false;
-            updateButton();
+            video.controls = true;
           }
         });
       } else video.pause();
@@ -35,7 +30,7 @@ document.querySelectorAll('.bench-carousel').forEach((carousel) => {
     syncPlayback();
   };
   videos.forEach((video, i) => {
-    video.controls = false;
+    video.controls = reducedMotion.matches;
     video.muted = true;
     video.tabIndex = -1;
     video.addEventListener('ended', () => { if (i === active && running) select(active + 1); });
@@ -43,12 +38,6 @@ document.querySelectorAll('.bench-carousel').forEach((carousel) => {
   dots.forEach((dot, i) => dot.addEventListener('click', () => select(i)));
   carousel.querySelector('.bench-prev').addEventListener('click', () => select(active - 1));
   carousel.querySelector('.bench-next').addEventListener('click', () => select(active + 1));
-  pause.addEventListener('click', () => {
-    running = !running;
-    if (running && videos[active].ended) videos[active].currentTime = 0;
-    updateButton();
-    syncPlayback();
-  });
   carousel.addEventListener('keydown', (event) => {
     if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
       event.preventDefault();
@@ -68,10 +57,9 @@ document.querySelectorAll('.bench-carousel').forEach((carousel) => {
   }, { threshold: 0.2 }).observe(viewport);
   document.addEventListener('visibilitychange', syncPlayback);
   reducedMotion.addEventListener('change', () => {
-    if (reducedMotion.matches) { running = false; updateButton(); syncPlayback(); }
+    if (reducedMotion.matches) { running = false; videos.forEach(video => { video.controls = true; }); syncPlayback(); }
   });
   carousel.querySelector('.bench-controls').hidden = false;
-  updateButton();
   select(0);
 });
 
