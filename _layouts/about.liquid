@@ -2,20 +2,11 @@
 layout: default
 ---
 <link rel="stylesheet" href="{{ '/assets/css/research.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/css/homepage.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/css/homepage-refined.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/css/homepage-2026.css' | relative_url }}">
 <script src="{{ '/assets/js/research.js' | relative_url }}" defer></script>
-<div class="post">
-  <header class="post-header">
-    <h1 class="post-title">
-      {% if site.title == 'blank' %}
-        <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }}
-        {{ site.last_name }}
-      {% else %}
-        {{ site.title }}
-      {% endif %}
-    </h1>
-    <p class="desc">{{ page.subtitle }}</p>
-  </header>
-
+<div class="post homepage-redesign">
   <article id="about">
     <div class="about-intro">
       {% if page.profile %}
@@ -40,18 +31,22 @@ layout: default
         </div>
       {% endif %}
 
-      <div class="about-bio">{{ content }}</div>
+      <div class="about-bio">
+        <header class="post-header">
+          <h1 class="post-title">
+            {% if site.title == 'blank' %}
+              <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }}
+              {{ site.last_name }}
+            {% else %}
+              {{ site.title }}
+            {% endif %}
+          </h1>
+        </header>
+        {{ content }}
+      </div>
     </div>
 
-    <!-- News -->
-    {% if page.announcements and page.announcements.enabled %}
-      <section id="news" class="research-section" aria-labelledby="news-heading">
-        <h2 id="news-heading">
-          <a href="{{ '/news/' | relative_url }}" style="color: inherit">News</a>
-        </h2>
-        {% include news.liquid limit=true %}
-      </section>
-    {% endif %}
+    {% include research_highlights.liquid %}
 
     <!-- Latest posts -->
     {% if page.latest_posts and page.latest_posts.enabled %}
@@ -64,13 +59,22 @@ layout: default
     <!-- Selected papers -->
     {% if page.selected_papers %}
       <section id="selected-papers" class="research-section" aria-labelledby="selected-heading">
-        <h2 id="selected-heading">Selected Research</h2>
+        <h2 id="selected-heading">Publications</h2>
         {% include selected_papers.liquid %}
         <div class="research-list">
           {% bibliography --group_by none --template selected_work --query @*[featured_other=true]* %}
         </div>
       </section>
     {% endif %}
+
+    {% if page.announcements and page.announcements.enabled %}
+      <section id="news" class="research-section" aria-labelledby="news-heading">
+        <h2 id="news-heading"><a href="{{ '/news/' | relative_url }}" style="color: inherit">News</a></h2>
+        {% include news.liquid limit=true %}
+      </section>
+    {% endif %}
+
+    {% include experience.liquid %}
 
     <!-- Social -->
     {% if page.social %}

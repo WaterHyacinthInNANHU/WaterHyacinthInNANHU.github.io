@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Mingxuan Yan — scalable sim-to-real robot learning and efficient robot data pipelines.">
+    <title>Mingxuan Yan | Georgia Tech</title>
+    <link rel="stylesheet" href="{{ '/assets/css/minimal-light-base.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/minimal-home.css' | relative_url }}">
+    <script src="{{ '/assets/js/research.js' | relative_url }}?v=20261101-task-carousel" defer></script>
+  </head>
+  <body class="minimal-home">
+    <div class="wrapper">
+      <header class="sidebar">
+        <img class="avatar" src="{{ '/assets/img/portrait-2026.jpg' | relative_url }}" alt="Portrait of Mingxuan Yan" width="156" height="156">
+        <h1>Mingxuan Yan</h1>
+        <p class="sidebar-role">Ph.D. Student</p>
+        <p class="sidebar-affiliation"><a href="https://www.gatech.edu/">Georgia Institute of Technology</a></p>
+        <p class="sidebar-lab"><a href="https://tasl-lab.github.io/">TASL</a> · advised by <a href="https://jiachenli94.github.io/">Prof. Jiachen Li</a></p>
+        <nav class="sidebar-links" aria-label="Contact and profiles">
+          <a href="mailto:myan81@gatech.edu">Email</a>
+          <a href="https://scholar.google.com/citations?user=iGkoOTIAAAAJ">Scholar</a>
+          <a href="https://github.com/WaterHyacinthInNANHU">GitHub</a>
+          <a href="https://www.linkedin.com/in/mingxuan-yan-b255931bb/">LinkedIn</a>
+        </nav>
+      </header>
+
+      <main class="main-content">
+        <section id="about" aria-labelledby="about-heading">
+          <h2 id="about-heading">About</h2>
+          {{ content }}
+        </section>
+
+        {% include research_interests.liquid %}
+
+        {% include research_highlights.liquid %}
+
+        {% if page.announcements and page.announcements.enabled %}
+          <section id="news" aria-labelledby="news-heading">
+            <h2 id="news-heading">News</h2>
+            {% include news.liquid limit=true %}
+          </section>
+        {% endif %}
+
+        {% if page.selected_papers %}
+          <section id="selected-papers" aria-labelledby="selected-heading">
+            <h2 id="selected-heading">Selected Publications</h2>
+            <div class="research-list">
+              {% bibliography --group_by none --template selected_work --query @*[homepage_secondary=true]* %}
+            </div>
+            <div class="research-list">
+              {% bibliography --group_by none --template selected_work --query @*[featured_other=true]* %}
+            </div>
+          </section>
+        {% endif %}
+
+        {% include experience_timeline.liquid %}
+        {% include academic_service.liquid %}
+
+        <footer class="site-credit">© {{ 'now' | date: '%Y' }} Mingxuan Yan · Layout adapted from <a href="https://github.com/yaoyao-liu/minimal-light">Minimal Light</a> (CC0).</footer>
+      </main>
+    </div>
+  </body>
+</html>

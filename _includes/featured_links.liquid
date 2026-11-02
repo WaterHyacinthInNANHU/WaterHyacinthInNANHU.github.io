@@ -1,0 +1,7 @@
+<div class="work-links" aria-label="{{ entry.short_name }} resources">
+  <a href="{{ entry.paper | default: entry.pdf | default: entry.html }}">Paper</a>
+  {% if entry.project %}<a href="{{ entry.project }}">Project</a>{% endif %}
+  {% if entry.code %}<a href="{{ entry.code }}">Code</a>{% endif %}
+  {% if entry.key == 'axis' %}<a class="data-browser-link" href="https://axisaiorg.github.io/AXIS-V1/data-browser/browser.html#explorer" target="_blank" rel="noopener">Explore data</a>{% elsif entry.dataset %}<a href="{{ entry.dataset }}">Data</a>{% endif %}
+  {% if entry.key == 'axisbench' %}<a href="https://axis-bench.github.io/assets/video/workspace-results-first-v5.mp4" target="_blank" rel="noopener" title="Both conditions receive target-task fine-tuning; rollouts shown at 2× speed">Full demo</a>{% elsif entry.key == 'axis' %}<a href="https://axisaiorg.github.io/AXIS-V1/assets/ppt-media/videos/media1.mp4" target="_blank" rel="noopener">Full demo</a>{% endif %}
+</div>

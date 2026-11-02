@@ -1,3 +1,54 @@
+.experience-group {
+  margin-top: 1.5rem;
+}
+.experience-group > h3 {
+  margin: 0 0 0.3rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+.experience-record {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1.5rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--global-divider-color);
+}
+.experience-record:last-child {
+  border-bottom: 0;
+}
+.experience-detail h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.6;
+  margin: 0;
+}
+.experience-detail h4 span {
+  font-weight: 400;
+}
+.experience-detail p {
+  margin: 0.3rem 0 0;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+.experience-date {
+  margin: 0.15rem 0 0;
+  color: var(--global-text-color-light);
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+.experience-detail .experience-projects {
+  font-size: 0.86rem;
+}
+@media (max-width: 640px) {
+  .experience-record {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.3rem;
+  }
+  .experience-date {
+    grid-row: 1;
+  }
+}
+
 .about-intro {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 200px);

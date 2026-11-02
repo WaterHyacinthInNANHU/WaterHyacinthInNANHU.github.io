@@ -1,0 +1,6 @@
+<section id="featured" aria-labelledby="featured-heading">
+  <h2 id="featured-heading">Featured Research</h2>
+  <div class="research-list featured-research-list">
+    {% bibliography --group_by none --template selected_work --query @*[homepage_featured=true]* %}
+  </div>
+</section>

@@ -1,86 +1,45 @@
 ---
 ---
-<article class="research-work" id="work-{{ entry.key }}" aria-labelledby="title-{{ entry.key }}">
-  <figure class="work-media">
-    {% assign preview_path = entry.preview | prepend: '/assets/img/publication_preview/' %}
-    {% if entry.key == 'axis' %}
-      <div class="axis-pairs" data-pair="0">
-        <a class="axis-pair-link" href="/assets/img/publication_preview/axis-pair-2.gif"
-          ><img
-            class="axis-pair-image"
-            src="/assets/img/publication_preview/axis-pair-2.gif"
-            alt="Place blue cup in red cup: no AXIS pretraining to AXIS pretraining"
-            loading="lazy"
-        ></a>
-        <div class="axis-pair-controls">
-          <button type="button" class="axis-prev" aria-label="Previous comparison">&#8592;</button
-          ><span class="axis-task">Place blue cup in red cup (1/6)</span
-          ><button type="button" class="axis-next" aria-label="Next comparison">&#8594;</button>
-        </div>
-      </div>
-      <figcaption>Detailed results: <a href="https://axis-bench.github.io/">AXIS-Bench</a></figcaption>
-    {% else -%}
-      <a href="{{ preview_path | relative_url }}"
-        ><img src="{{ preview_path | relative_url }}" alt="{{ entry.media_alt | escape }}" loading="lazy" decoding="async"
-      ></a>
-    {%- endif %}
-  </figure>
+<article class="research-work{% if entry.homepage_featured %} featured-work{% endif %}" id="work-{{ entry.key }}" aria-labelledby="title-{{ entry.key }}">
+  {% assign thumbnail_alt = entry.media_alt | default: entry.short_name %}
+  {% if entry.key == 'axisbench' %}
+    {% assign thumbnail = 'axisbench-single-comparison.jpg' %}
+    {% assign thumbnail_alt = 'One illustrative trial: plain behavior cloning fails and episode conditioning succeeds' %}
+  {% elsif entry.key == 'axis' %}
+    {% assign thumbnail = 'highlight-axis.jpg' %}
+  {% elsif entry.key == 'rdd' %}
+    {% assign thumbnail = 'rdd-summary.svg' %}
+  {% else %}
+    {% assign thumbnail = entry.preview %}
+  {% endif %}
+  {% if entry.key == 'axisbench' %}
+    {% include sim2real_demo.liquid %}
+  {% elsif entry.key == 'rdd' %}
+    {% include rdd_story.liquid %}
+  {% elsif entry.key == 'axis' %}
+    {% include axis_collection.liquid %}
+  {% elsif thumbnail %}
+    <a class="work-thumb" href="{{ entry.project | default: entry.paper | default: entry.pdf | default: entry.html }}" aria-label="View {{ entry.short_name | escape }}">
+      <img src="{{ thumbnail | prepend: '/assets/img/publication_preview/' | relative_url }}" alt="{{ thumbnail_alt | escape }}" loading="lazy" decoding="async">
+    </a>
+  {% endif %}
   <div class="work-body">
-    <h3 id="title-{{ entry.key }}">
-      <a href="{{ entry.paper | default: entry.pdf | default: entry.html }}">{{ entry.display_title | default: entry.title }}</a>
-    </h3>
+    <h3 id="title-{{ entry.key }}"><a href="{{ entry.paper | default: entry.pdf | default: entry.html }}">{{ entry.display_title | default: entry.title }}</a></h3>
     <div class="work-author-block">
       <p class="work-authors" id="authors-{{ entry.key }}">
         {%- for author in entry.author_array -%}
           {%- unless forloop.first -%}, {% endunless -%}
           {%- assign last_name = author.last | regex_replace: '[*∗†‡§¶‖&^]', '' -%}
           {%- assign full_name = author.first | append: ' ' | append: last_name -%}
-          {%- if full_name == 'Mingxuan Yan' -%}
-            <strong>{{ full_name }}</strong>
-          {%- else -%}
-            {{ full_name }}
-          {%- endif -%}
-          {%- if author.last contains '*' -%}
-            <sup>*</sup>
-          {%- endif -%}
+          {%- if full_name == 'Mingxuan Yan' -%}<strong>{{ full_name }}</strong>{%- else -%}{{ full_name }}{%- endif -%}
+          {%- if author.last contains '*' -%}<sup>*</sup>{%- endif -%}
         {%- endfor -%}
       </p>
-      <button
-        class="author-toggle"
-        type="button"
-        aria-expanded="false"
-        aria-controls="authors-{{ entry.key }}"
-        data-work="{{ entry.short_name | escape }}"
-        hidden
-      >
-        Show all authors
-      </button>
+      <button class="author-toggle" type="button" aria-expanded="false" aria-controls="authors-{{ entry.key }}" data-work="{{ entry.short_name | escape }}" hidden>Show all authors</button>
+      {% if entry.key == 'axis' %}<span class="equal-contribution">* Equal contribution</span>{% endif %}
     </div>
-    <p class="work-venue">
-      {% if entry.venue_url -%}
-        <a href="{{ entry.venue_url }}">{{ entry.display_venue }}</a>
-      {%- else -%}
-        {{- entry.display_venue -}}
-      {%- endif %}
-    </p>
-    {% if entry.author_note %}
-      <p class="work-note">{{ entry.author_note }}</p>
-    {% endif %}
-    <p class="work-highlight">
-      <strong>{{ entry.highlight }}</strong>
-    </p>
-    <p class="work-tldr">{{ entry.tldr }}</p>
-    <div class="work-links" aria-label="{{ entry.short_name }} resources">
-      <a href="{{ entry.paper | default: entry.pdf | default: entry.html }}">Paper</a>
-      {% if entry.project -%}
-        <a href="{{ entry.project }}">Project</a>
-      {%- endif %}
-      {% if entry.dataset -%}
-        <a href="{{ entry.dataset }}">Dataset</a>
-      {%- endif %}
-      {% if entry.code -%}
-        <a href="{{ entry.code }}">Code</a>
-      {%- endif %}
-    </div>
+    <p class="work-venue">{% if entry.venue_url %}<a href="{{ entry.venue_url }}" title="{{ entry.display_venue | escape }}">{{ entry.short_venue | default: entry.display_venue }}</a>{% else %}{{ entry.display_venue }}{% endif %}</p>
+    {% if entry.homepage_summary %}<p class="work-summary">{{ entry.homepage_summary }}</p>{% endif %}
+    {% include featured_links.liquid %}
   </div>
 </article>

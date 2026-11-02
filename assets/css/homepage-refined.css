@@ -1,0 +1,395 @@
+/* Refined portfolio: strong hierarchy and a large, switchable research showcase. */
+body:has(.homepage-redesign) {
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-weight: 400;
+  color: #243348;
+  background: #fbfcfe;
+}
+.homepage-redesign {
+  font-weight: 400;
+}
+.homepage-redesign p,
+.homepage-redesign td,
+.homepage-redesign th,
+.homepage-redesign a {
+  font-weight: inherit;
+}
+body:has(.homepage-redesign) > .container {
+  max-width: 1160px;
+  padding-top: 56px;
+}
+.homepage-redesign .post-title {
+  font-size: 50px;
+  font-weight: 750;
+  letter-spacing: -2px;
+  color: #15253c;
+}
+.homepage-redesign .intro-affiliation {
+  font-size: 15px;
+  font-weight: 500;
+  color: #536780;
+  margin-top: 12px;
+}
+.homepage-redesign .about-bio {
+  font-size: 16px;
+  line-height: 1.75;
+}
+.homepage-redesign .about-intro {
+  grid-template-columns: minmax(0, 1fr) 240px;
+  gap: 72px;
+}
+.homepage-redesign .profile,
+.homepage-redesign .profile img {
+  width: 240px;
+  height: 240px;
+}
+.homepage-redesign .profile figure {
+  border-radius: 16px;
+  box-shadow: 0 12px 35px #1e395418;
+}
+.homepage-redesign .profile img {
+  border-radius: 16px !important;
+}
+.homepage-redesign .contact-row {
+  font-size: 13px;
+  font-weight: 500;
+}
+.interest-section {
+  margin: 28px 0 38px;
+  padding: 22px 24px;
+  border: 1px solid #e1e8f0;
+  border-radius: 12px;
+  background: #f1f5fa;
+}
+.interest-section h2 {
+  font-size: 13px;
+  font-weight: 700;
+  margin: 0 0 12px;
+  color: #314968;
+}
+.interest-topics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  color: #254c7d;
+  font-size: 14px;
+  font-weight: 500;
+}
+.interest-topics span::before {
+  content: "";
+  display: inline-block;
+  height: 6px;
+  width: 6px;
+  background: #4b7ee0;
+  border-radius: 50%;
+  margin-right: 9px;
+  vertical-align: 2px;
+}
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 20px;
+  gap: 20px;
+}
+.section-heading h2,
+.homepage-redesign .research-section > h2 {
+  font-size: 25px;
+  font-weight: 700;
+  letter-spacing: -0.7px;
+  color: #17273d;
+}
+.section-heading h2 {
+  margin: 0;
+}
+.section-heading > a {
+  font-size: 12px;
+  white-space: nowrap;
+}
+.highlight-grid {
+  border: 1px solid #dbe4ee;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #12283f;
+  box-shadow: 0 10px 30px #15253c0b;
+}
+.highlight-card {
+  height: 350px;
+  display: grid;
+  grid-template-columns: 58% 42%;
+  min-height: 320px;
+  color: white !important;
+  text-decoration: none !important;
+}
+.highlight-card[hidden] {
+  display: none;
+}
+.highlight-visual {
+  background: #e9eff5;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.highlight-visual img,
+.highlight-visual video {
+  width: 100%;
+  height: 100%;
+  max-height: 370px;
+  object-fit: cover;
+  display: block;
+}
+.highlight-content {
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.highlight-kicker {
+  color: #a9c9eb;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.1px;
+  line-height: 1.6;
+}
+.highlight-content h3 {
+  font-size: 37px;
+  font-weight: 700;
+  letter-spacing: -1px;
+  margin: 16px 0 10px;
+  color: white;
+}
+.highlight-content h3 > span {
+  font-size: 24px;
+  color: #91b9e6;
+}
+.highlight-content p {
+  font-size: 17px;
+  line-height: 1.6;
+  color: #e1ebf7;
+  margin-bottom: 24px;
+}
+.highlight-cta {
+  color: #e0eeff;
+  font-size: 12px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #7395b7;
+}
+.highlight-visual video { object-fit: contain; background: #eef2f6; }
+.highlight-card:hover .highlight-cta {
+  border-color: white;
+}
+.highlight-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 14px;
+}
+.highlight-controls button {
+  border: 1px solid #dbe4ee;
+  background: white;
+  color: #526780;
+  border-radius: 6px;
+  font: inherit;
+  font-size: 12px;
+  padding: 9px 14px;
+  cursor: pointer;
+}
+.highlight-controls button[aria-pressed="true"] {
+  background: #244f80;
+  color: white;
+  border-color: #244f80;
+}
+.highlight-controls .highlight-pause {
+  margin-left: auto;
+}
+.homepage-redesign #news {
+  margin-top: 36px;
+  padding: 22px 0 18px;
+}
+.homepage-redesign .news table {
+  font-size: 13px;
+  line-height: 1.65;
+}
+.homepage-redesign .news th {
+  width: 96px !important;
+  font-size: 12px;
+}
+.homepage-redesign .news td {
+  padding: 9px 0;
+}
+.homepage-redesign .news th {
+  padding-top: 9px;
+}
+.news-category {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+.older-news summary {
+  cursor: pointer;
+  color: #285d83;
+  font-size: 12px;
+  padding: 12px 0 2px;
+  width: fit-content;
+}
+.older-news .news-hide,
+.older-news[open] .news-show {
+  display: none;
+}
+.older-news[open] .news-hide {
+  display: inline;
+}
+.older-news[open] table {
+  margin-top: 10px;
+}
+.homepage-redesign .work-featured {
+  background: white;
+  border: 1px solid #e1e8f0;
+  border-radius: 12px;
+  padding: 24px;
+  grid-template-columns: 34% minmax(0, 1fr);
+  gap: 30px;
+}
+.homepage-redesign .research-list ol.bibliography > li {
+  padding-bottom: 24px;
+}
+.homepage-redesign .project-name {
+  font-size: 25px;
+  font-weight: 700;
+}
+.homepage-redesign .project-subtitle {
+  font-size: 15px;
+  font-weight: 600;
+}
+.homepage-redesign .work-authors {
+  font-size: 12px;
+  color: #5e6c7d;
+}
+.homepage-redesign .work-tldr {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #526174;
+}
+.homepage-redesign .work-highlight {
+  font-size: 15px;
+}
+.homepage-redesign .work-compact h3 {
+  font-weight: 600;
+}
+.homepage-redesign .experience-detail h4 {
+  font-weight: 600;
+}
+.homepage-redesign .experience-detail p {
+  font-size: 13px;
+}
+.homepage-redesign a:focus-visible,
+.homepage-redesign button:focus-visible,
+.older-news summary:focus-visible {
+  outline: 3px solid #79a8ee;
+  outline-offset: 4px;
+}
+@media (max-width: 800px) {
+  .homepage-redesign .about-intro {
+    grid-template-columns: minmax(0, 1fr) 185px;
+    gap: 30px;
+  }
+  .homepage-redesign .profile,
+  .homepage-redesign .profile img {
+    width: 185px;
+    height: 185px;
+  }
+  .homepage-redesign .post-title {
+    font-size: 40px;
+  }
+  .highlight-content {
+    padding: 24px;
+  }
+  .highlight-content h3 {
+    font-size: 29px;
+  }
+  .highlight-content p {
+    font-size: 15px;
+  }
+  .highlight-card {
+    min-height: 275px;
+  }
+}
+@media (max-width: 640px) {
+  body:has(.homepage-redesign) > .container {
+    padding-top: 30px;
+  }
+  .homepage-redesign .about-intro {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .homepage-redesign .profile,
+  .homepage-redesign .profile img {
+    width: 164px;
+    height: 164px;
+  }
+  .homepage-redesign .post-title {
+    font-size: 38px;
+  }
+  .homepage-redesign .intro-affiliation {
+    font-size: 13px;
+  }
+  .homepage-redesign .about-bio {
+    font-size: 15px;
+  }
+  .interest-section {
+    padding: 18px;
+  }
+  .interest-topics {
+    font-size: 13px;
+    gap: 10px;
+    flex-direction: column;
+  }
+  .section-heading h2 {
+    font-size: 22px;
+  }
+  .section-heading > a {
+    font-size: 10px;
+  }
+  .highlight-card {
+    height: auto;
+    grid-template-columns: 1fr;
+  }
+  .highlight-visual {
+    aspect-ratio: 16/10;
+  }
+  .highlight-content {
+    padding: 24px;
+  }
+  .highlight-content p {
+    margin-bottom: 16px;
+  }
+  .highlight-content h3 {
+    margin-top: 10px;
+  }
+  .highlight-controls {
+    gap: 5px;
+  }
+  .highlight-controls button {
+    padding: 9px 8px;
+    font-size: 11px;
+  }
+  .homepage-redesign .work-featured {
+    grid-template-columns: 1fr;
+    padding: 18px;
+  }
+  .homepage-redesign .news th {
+    width: 75px !important;
+    font-size: 11px;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .highlight-card .highlight-visual img {
+    transition: transform 0.3s ease;
+  }
+  .highlight-card:hover .highlight-visual img {
+    transform: scale(1.025);
+  }
+}

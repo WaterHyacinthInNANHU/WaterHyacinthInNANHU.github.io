@@ -1,0 +1,373 @@
+/* Homepage redesign: quiet typography, three featured works, compact archive. */
+.news-category {
+  display: inline-block;
+  padding: 1px 6px;
+  margin-right: 7px;
+  border-radius: 3px;
+  background: #eef3f8;
+  color: #285d83;
+  font-size: 10px;
+  font-weight: 600;
+  vertical-align: 1px;
+}
+.news-category-release {
+  background: #edf5f0;
+  color: #397052;
+}
+.news-category-experience {
+  background: #f5f0e7;
+  color: #866533;
+}
+body:has(.homepage-redesign) {
+  --global-theme-color: #285d83;
+  --global-text-color: #28323c;
+  --global-text-color-light: #697581;
+  --global-divider-color: #e4e9ed;
+  --global-bg-color: #fff;
+  background: #fff;
+  color: #28323c;
+  padding-top: 0 !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+body:has(.homepage-redesign) > header {
+  display: none;
+}
+body:has(.homepage-redesign) > footer {
+  display: none;
+}
+.homepage-redesign::after {
+  content: "Mingxuan Yan · Georgia Institute of Technology";
+  display: block;
+  margin-top: 52px;
+  padding-top: 20px;
+  border-top: 1px solid #e4e9ed;
+  color: #697581;
+  font-size: 11px;
+}
+body:has(.homepage-redesign) > .container {
+  max-width: 1060px;
+  margin-top: 0 !important;
+  padding: 72px 40px 40px;
+}
+.homepage-redesign .about-intro {
+  grid-template-columns: minmax(0, 1fr) 224px;
+  gap: 64px;
+  align-items: center;
+}
+.homepage-redesign .profile {
+  align-self: center;
+  height: 224px;
+  width: 224px;
+}
+.homepage-redesign .profile figure {
+  position: static;
+  border-radius: 12px;
+}
+.homepage-redesign .profile img {
+  width: 224px;
+  height: 224px;
+  object-fit: cover;
+  transform: none;
+  box-shadow: none !important;
+  border-radius: 12px !important;
+}
+.homepage-redesign .post-header {
+  margin: 0 0 8px;
+}
+.homepage-redesign .post-title {
+  font-size: 42px;
+  font-weight: 650;
+  letter-spacing: -1.5px;
+  margin: 0;
+  line-height: 1.15;
+}
+.homepage-redesign .post-title span {
+  font-weight: inherit !important;
+}
+.homepage-redesign .intro-affiliation {
+  color: #697581;
+  font-size: 14px;
+  margin: 0 0 22px;
+}
+.homepage-redesign .about-bio {
+  font-size: 15px;
+  line-height: 1.8;
+}
+.homepage-redesign .contact-row {
+  font-size: 13px;
+  gap: 12px;
+  margin: 20px 0 0;
+}
+.homepage-redesign .contact-row span {
+  color: #b5bec5;
+}
+.homepage-redesign .research-section {
+  margin-top: 54px;
+}
+.homepage-redesign .research-section > h2 {
+  font-size: 23px;
+  letter-spacing: -0.5px;
+  font-weight: 650;
+  margin-bottom: 24px;
+}
+.homepage-redesign #news {
+  padding: 22px 0;
+  border-top: 1px solid #e4e9ed;
+  border-bottom: 1px solid #e4e9ed;
+  margin-top: 38px;
+}
+.homepage-redesign #news > h2 {
+  font-size: 17px;
+  margin-bottom: 12px;
+}
+.homepage-redesign .news table {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.7;
+  color: inherit;
+}
+.homepage-redesign .news th {
+  color: #697581;
+  font-weight: 400;
+  width: 115px !important;
+  padding-left: 0;
+  white-space: nowrap;
+}
+.homepage-redesign .news td {
+  padding-bottom: 9px;
+}
+.homepage-redesign .research-list ol.bibliography > li {
+  border: 0;
+  padding: 0 0 38px;
+}
+.homepage-redesign .research-work {
+  grid-template-columns: 310px minmax(0, 1fr);
+  gap: 34px;
+  align-items: center;
+}
+.homepage-redesign .work-media {
+  position: relative;
+  margin: 0;
+}
+.homepage-redesign .work-media img,
+.homepage-redesign .work-media video {
+  border: 0;
+  border-radius: 7px;
+  background: #f5f7f9;
+  width: 100%;
+  max-height: 350px;
+  object-fit: contain;
+}
+.homepage-redesign .work-media video {
+  aspect-ratio: auto;
+}
+.homepage-redesign .project-name {
+  display: block;
+  font-size: 23px;
+  letter-spacing: -0.5px;
+  color: #28323c;
+  margin-bottom: 4px;
+}
+.homepage-redesign .project-subtitle {
+  display: block;
+  color: #344858;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+.homepage-redesign .work-body h3 a:hover {
+  text-decoration: none;
+}
+.homepage-redesign .work-body h3 a:hover .project-name {
+  color: #285d83;
+}
+.homepage-redesign .work-authors {
+  font-size: 12px;
+  line-height: 1.6;
+  color: #697581;
+}
+.homepage-redesign .work-authors.authors-enhanced:not(.authors-expanded) {
+  max-height: 3.2em;
+}
+.homepage-redesign .work-authors strong {
+  color: #28323c;
+}
+.homepage-redesign .author-toggle {
+  font-size: 11px;
+  padding: 2px 0;
+}
+.homepage-redesign .work-venue {
+  font-size: 12px;
+  margin: 8px 0;
+  color: #285d83;
+}
+.homepage-redesign .work-note {
+  font-size: 11px;
+}
+.homepage-redesign .work-highlight {
+  font-size: 14px;
+  line-height: 1.6;
+  margin-top: 14px;
+}
+.homepage-redesign .work-highlight strong {
+  font-weight: 600;
+}
+.homepage-redesign .work-tldr {
+  font-size: 13px;
+  line-height: 1.75;
+  color: #586571;
+  margin-bottom: 12px;
+}
+.homepage-redesign .work-links {
+  gap: 7px;
+}
+.homepage-redesign .work-links a {
+  background: #f0f5f8;
+  border: 0;
+  border-radius: 4px;
+  font-size: 11px;
+  padding: 5px 10px;
+}
+.homepage-redesign .work-links a:hover {
+  background: #e2edf4;
+}
+.homepage-redesign .work-compact {
+  grid-template-columns: 190px minmax(0, 1fr);
+  gap: 30px;
+  padding-top: 22px;
+  border-top: 1px solid #e4e9ed;
+}
+.homepage-redesign .work-compact .work-media img {
+  max-height: 128px;
+  background: white;
+}
+.homepage-redesign .work-compact h3 {
+  font-size: 15px;
+  line-height: 1.5;
+}
+.homepage-redesign .work-compact .work-highlight {
+  font-size: 13px;
+  margin: 8px 0 12px;
+}
+.homepage-redesign .work-compact .work-highlight strong {
+  font-weight: 400;
+}
+.homepage-redesign .demo-toggle {
+  display: block;
+  margin: 5px 0 0 auto;
+  background: transparent;
+  border: 0;
+  padding: 3px 6px;
+  color: #697581;
+  font-size: 11px;
+  cursor: pointer;
+}
+.homepage-redesign .axis-pair-controls {
+  font-size: 11px;
+  margin-top: 3px;
+}
+.homepage-redesign .axis-pair-controls button {
+  border: 0;
+  background: #f0f5f8;
+}
+.homepage-redesign .work-media figcaption {
+  font-size: 11px;
+}
+.homepage-redesign #experience {
+  border-top: 1px solid #e4e9ed;
+  padding-top: 32px;
+  margin-top: 10px;
+}
+.homepage-redesign .experience-group > h3 {
+  font-size: 14px;
+  color: #697581;
+  font-weight: 500;
+}
+.homepage-redesign .experience-detail h4 {
+  font-size: 14px;
+}
+.homepage-redesign .experience-detail p {
+  font-size: 12px;
+  color: #697581;
+}
+.homepage-redesign .experience-date {
+  font-size: 12px;
+}
+.homepage-redesign .experience-record {
+  padding: 18px 0;
+}
+@media (max-width: 800px) {
+  body:has(.homepage-redesign) > .container {
+    padding: 40px 24px;
+  }
+  .homepage-redesign .about-intro {
+    grid-template-columns: minmax(0, 1fr) 180px;
+    gap: 28px;
+  }
+  .homepage-redesign .profile,
+  .homepage-redesign .profile img {
+    width: 180px;
+    height: 180px;
+  }
+  .homepage-redesign .research-work {
+    grid-template-columns: 250px minmax(0, 1fr);
+    gap: 24px;
+  }
+  .homepage-redesign .work-compact {
+    grid-template-columns: 150px minmax(0, 1fr);
+  }
+}
+@media (max-width: 640px) {
+  body:has(.homepage-redesign) > .container {
+    padding: 32px 22px;
+  }
+  .homepage-redesign .about-intro {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  .homepage-redesign .profile {
+    width: 156px;
+    height: 156px;
+    justify-self: start;
+  }
+  .homepage-redesign .profile img {
+    width: 156px;
+    height: 156px;
+  }
+  .homepage-redesign .post-title {
+    font-size: 36px;
+  }
+  .homepage-redesign .intro-affiliation {
+    font-size: 12px;
+  }
+  .homepage-redesign .research-work,
+  .homepage-redesign .work-compact {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .homepage-redesign .work-media {
+    max-width: 360px;
+  }
+  .homepage-redesign .work-compact .work-media {
+    max-width: 220px;
+    margin-left: 0;
+  }
+  .homepage-redesign .news th {
+    width: 85px !important;
+    font-size: 11px;
+  }
+  .homepage-redesign .news td {
+    font-size: 12px;
+  }
+  .homepage-redesign .contact-row {
+    gap: 8px;
+    font-size: 12px;
+  }
+  .homepage-redesign .work-links a {
+    padding: 8px 12px;
+  }
+  .homepage-redesign .demo-toggle {
+    min-height: 32px;
+  }
+}
