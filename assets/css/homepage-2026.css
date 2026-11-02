@@ -1,0 +1,1 @@
+body:has(.homepage-redesign){background:#fcfcfa;color:#202a34;--global-theme-color:#285b83}body:has(.homepage-redesign)>.container{max-width:1100px;padding-top:68px}@media(max-width:640px){body:has(.homepage-redesign)>.container{padding-top:26px}}
