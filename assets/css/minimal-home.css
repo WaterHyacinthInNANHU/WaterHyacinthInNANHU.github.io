@@ -353,6 +353,8 @@
 .minimal-home .timeline-date { color: #74818c; font: 12px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; white-space: nowrap; font-variant-numeric: tabular-nums; }
 .minimal-home .main-content .timeline-detail p { margin: 0; font-size: 15px; line-height: 1.5; }
 .minimal-home .timeline-detail > p > a { color: #526574; }
+.minimal-home .company-inline { display: inline-flex; align-items: center; gap: 5px; vertical-align: -3px; white-space: nowrap; }
+.minimal-home .company-inline img { width: 18px; height: 18px; object-fit: contain; flex-shrink: 0; }
 .minimal-home .main-content .timeline-detail .timeline-note { margin-top: 3px; color: #74818c; font-size: 12px; }
 .minimal-home .institution-mark { display: block; width: 44px; height: 44px; overflow: hidden; }
 .minimal-home .institution-mark img { display: block; width: 44px; height: 44px; object-fit: contain; }
