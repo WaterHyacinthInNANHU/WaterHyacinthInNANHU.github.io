@@ -79,8 +79,12 @@ document.querySelectorAll('.bench-carousel').forEach((carousel) => {
 document.querySelectorAll('.media-player').forEach((media) => {
   const video = media.querySelector('video');
   const button = media.querySelector('.media-play');
-  video.controls = false;
-  button.hidden = false;
+  video.controls = video.autoplay;
+  button.hidden = video.autoplay;
+  if (video.autoplay) {
+    video.muted = true;
+    video.play().catch(() => { button.hidden = false; video.controls = false; });
+  }
   button.addEventListener('click', () => {
     video.controls = true;
     button.hidden = true;
